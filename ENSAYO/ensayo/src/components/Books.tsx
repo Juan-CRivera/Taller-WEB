@@ -1,3 +1,4 @@
+// Books.tsx
 import { useEffect, useState } from 'react'
 import type React from 'react'
 import { API } from '../services/api'
@@ -80,6 +81,7 @@ export default function Books() {
       {loading && <p>Cargando…</p>}
       {!loading && list.length === 0 && <p>No hay resultados.</p>}
 
+      {/* 👇 ESTO es lo que debe mostrarse, NO el JSON */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(220px, 1fr))', gap:12 }}>
         {list.map(b => (
           <article key={b.id} onClick={() => openDetail(b.id)} style={{ cursor:'pointer', border:'1px solid #ddd', borderRadius:12, padding:12 }}>
